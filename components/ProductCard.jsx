@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
       <Image src={product.image} alt="Product Image" height={300} width={220} />
       <h4 className={styles.title}>{product.product}</h4>
       <h5 className={styles.category}>{product.category}</h5>
-      <p>$ {product.price}</p>
+      <p>Ksh. {product.price}</p>
       <button
         onClick={() => dispatch(addToCart(product))}
         className={styles.button}

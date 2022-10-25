@@ -56,7 +56,7 @@ const CartPage = () => {
               <p>$ {item.quantity * item.price}</p>
             </div>
           ))}
-          <h2>Grand Total: $ {getTotalPrice()}</h2>
+          <h2>Grand Total: Ksh. {getTotalPrice()}</h2>
           <button>
             <h2>Checkout WithMpesa</h2>
           </button>
