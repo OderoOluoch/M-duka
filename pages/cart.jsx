@@ -40,7 +40,7 @@ const CartPage = () => {
                 <Image src={item.image} alt="Product Image" height="90" width="65" />
               </div>
               <p>{item.product}</p>
-              <p>$ {item.price}</p>
+              <p>Ksh {item.price}</p>
               <p>{item.quantity}</p>
               <div className={styles.buttons}>
                 <button onClick={() => dispatch(incrementQuantity(item.id))}>
