@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useRouter } from 'next/router'
 // Importing actions from  cart.slice.js
 import {
   incrementQuantity,
@@ -42,6 +43,20 @@ const CartPage = () => {
     setAuthDialogOpen(false)
   }
 
+  const router = useRouter()
+
+
+  const handleLoginTestOdero = async (e) => {
+    e.preventDefault()
+    console.log("@@@");
+    await dispatch(doLogin({
+      username: "C Ronaldo",
+      phone: "0712345678"
+    }));
+    setAuthDialogOpen(false)
+    router.push('/m-auth/authenticate')
+  }
+
   return (
     <div className={styles.container}>
       {cart.length === 0 ? (
@@ -75,7 +90,7 @@ const CartPage = () => {
                   x
                 </button>
               </div>
-              <p>$ {item.quantity * item.price}</p>
+              <p>Ksh. {item.quantity * item.price}</p>
             </div>
           ))}
           <h2>Grand Total: Ksh. {getTotalPrice()}</h2>
@@ -113,7 +128,7 @@ const CartPage = () => {
                 Log in to your account
               </Typography>
               <Button
-                onClick={handleLogin}
+                onClick={handleLoginTestOdero}
                 sx={{
                   border: "1px solid",
                   marginTop: "1rem"
