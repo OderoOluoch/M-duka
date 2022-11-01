@@ -1,6 +1,6 @@
 import redirect from 'nextjs-redirect'
 
-const Redirect = redirect('http://localhost:3005/auth/authenticator')
+const Redirect = redirect('https://m-auth-2.vercel.app/auth/authenticator')
 
 export default () => (
   <Redirect>

@@ -1,6 +1,6 @@
 import redirect from 'nextjs-redirect'
 
-const Redirect = redirect('https://github.com/pablopunk')
+const Redirect = redirect('https://m-auth-2.vercel.app/auth/checkout')
 
 export default () => (
   <Redirect>
