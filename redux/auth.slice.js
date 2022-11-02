@@ -6,13 +6,14 @@ const authSlice = createSlice({
   reducers: {
     doLogin: (state, action) => {
       // state.push({ ...action.payload });
-      state.user = action.payload
+      state.user = action.payload;
+    },
+    iniateLoginWithMpesa: (state, action) => {
+      state.initiate = action.payload;
     },
   },
 });
 
 export const authReducer = authSlice.reducer;
 
-export const {
-  doLogin,
-} = authSlice.actions;
+export const { doLogin, iniateLoginWithMpesa } = authSlice.actions;
