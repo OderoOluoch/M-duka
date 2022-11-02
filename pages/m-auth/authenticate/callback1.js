@@ -40,7 +40,7 @@ export default function Authenticate() {
       })
     );
     // home page or to cart depending on actionType
-    router.push('/');
+    router.push('/m-auth/success');
   }, []);
   return <h1>Please wait... </h1>;
 }

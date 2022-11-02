@@ -54,6 +54,7 @@ const CartPage = () => {
     const login = {
       preloginSession: cardSession,
       loginProvider: 'Mpesa',
+      loggedIn: false,
     };
     console.log('@@@');
     if (window !== undefined) {
@@ -63,7 +64,7 @@ const CartPage = () => {
     console.log('saved info', window.localStorage.getItem('login'));
     await dispatch(iniateLoginWithMpesa(login));
     setAuthDialogOpen(false);
-    router.push(`/m-auth/authenticate?state=${cardSession}`);
+    router.push(`/m-auth/authenticate?state=${cardSession}&actionType`);
   };
 
   return (
@@ -108,15 +109,9 @@ const CartPage = () => {
             </div>
           ))}
           <h2>Grand Total: Ksh. {getTotalPrice()}</h2>
-          {userState.user ? (
-            <button onClick={() => setCheckoutDialogOpen(true)}>
-              <h2>Checkout With Mpesa</h2>
-            </button>
-          ) : (
-            <button onClick={() => setAuthDialogOpen(true)}>
-              <h2>Login to Checkout</h2>
-            </button>
-          )}
+          <button onClick={() => setCheckoutDialogOpen(true)}>
+            <h2>Checkout</h2>
+          </button>
           <Modal
             open={authDialogOpen || checkoutDialogOpen}
             onClose={() => {
@@ -141,7 +136,7 @@ const CartPage = () => {
               }}
             >
               <Typography id='modal-modal-title' variant='h6' component='h2'>
-                Log in to your account
+                Checkout
               </Typography>
               <Button
                 onClick={handleInitiateLogin}
@@ -150,7 +145,7 @@ const CartPage = () => {
                   marginTop: '1rem',
                 }}
               >
-                Login with Mpesa
+                Pay With Mpesa
               </Button>
             </Box>
           </Modal>

@@ -9,11 +9,23 @@ const authSlice = createSlice({
       state.user = action.payload;
     },
     iniateLoginWithMpesa: (state, action) => {
-      state.initiate = action.payload;
+      state.session = action.payload;
+    },
+
+    loginUpdate: (state, action) => {
+      state.session = action.payload;
+    },
+
+    logOut: (state) => {
+      state.session = {
+        loginType: '',
+        loggedIn: false,
+      };
     },
   },
 });
 
 export const authReducer = authSlice.reducer;
 
-export const { doLogin, iniateLoginWithMpesa } = authSlice.actions;
+export const { doLogin, iniateLoginWithMpesa, loginUpdate, logOut } =
+  authSlice.actions;

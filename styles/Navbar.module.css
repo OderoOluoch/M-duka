@@ -24,3 +24,8 @@
   .navlink a:hover {
     color: #f9826c;
   }
+
+  .img {
+    width: 10px;
+    height: 10px;
+  }
